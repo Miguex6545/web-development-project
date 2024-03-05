@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Cules</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FC BARCELONA</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <div class="image-container">
+        <img src="jersey.jpg" alt="FC Barcelona jersey" class="team-jersey">
+        <div class="image-text">
+            <h2>Welcome to the FC Barcelona news of the moment</h2>
+            <p>In this website, you will find all the news and important information of the team and much more!</p>
+        </div>
+    </div>
+     <form id="playerForm">
+        <label for="playerName">Enter the name of the best player in the club history!</label><br>
+        <input type="text" id="playerName" name="playerName"><br>
+        <button type="button" onclick="validatePlayer()">Submit</button>
+        <p id="validationMessage"></p>
+    </form>
+</main>
+
+
+    <footer>
+        <p>Follow us for more!</p>
+    </footer>
+
+    <script>
+        function validatePlayer() {
+            var playerName = document.getElementById("playerName").value;
+            var validPlayers = ["Messi","messi","MESSI"];
+
+            if (validPlayers.includes(playerName)) {
+                document.getElementById("validationMessage").innerHTML = "";
+                alert("THE GOAT!");
+            } else {
+                document.getElementById("validationMessage").innerHTML = "Are you sure you are a fan?";
+            }
+        }
+    </script>
+
+</body>
+</html>
