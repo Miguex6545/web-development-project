@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome Cules</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>FC BARCELONA</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="fan_test.html">FAN TEST</a></li>
+                </ul>
+            </nav>
+        </header>
+    <main>
+        <div class="test-container">
+            <form id="test-form" action="/submit-test" method="POST">
+                <div class="question">
+                    <p>1. When was the last time we won the Champions League?</p>
+                    <label>
+                        <input type="radio" name="question1" value="a"> a) 2018
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question1" value="b"> b) 2019
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question1" value="c"> c) 2015
+                    </label><br>
+                </div>
+                <div class="question">
+                    <p>2. Who was the person that created our style "tiki-taka"?</p>
+                    <label>
+                        <input type="radio" name="question2" value="a"> a) Ronald Koeman
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question2" value="b"> b) Pep Guardiola
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question2" value="c"> c) Johan Cruyff
+                    </label><br>
+                </div>
+                <div class="question">
+                    <p>3. What is the nickname of FC Barcelona?</p>
+                    <label>
+                        <input type="radio" name="question3" value="a"> a) The Reds
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question3" value="b"> b) The Blues
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question3" value="c"> c) The Blaugrana
+                    </label><br>
+                </div>
+           
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+    </main>
+    <footer>
+        <p>How much do you know?</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "web-development-project",
+  "version": "1.0.0",
+  "description": "<!---Welcome to the Milestone#1 of my project, this is just a start and not the final product so please don't be to harsh!--->",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2"
+  }
+}
