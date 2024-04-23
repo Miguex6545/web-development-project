@@ -2,16 +2,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: beige;
     background-image: url('stadium.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    filter: blur(0px);
 }
 
 header {
     background-color: #d81313;
     color: #f9f92f;
     padding: 20px;
+    z-index: 1;
 }
 
 header h1 {
@@ -35,7 +38,10 @@ nav ul li a {
 
 main {
     padding: 20px;
-    background-color: beige;
+    background-color: rgba(255, 255, 255, 0.8);
+    min-height: calc(100vh - 80px);
+    overflow-y: auto;
+    z-index: 1;
 }
 
 footer {

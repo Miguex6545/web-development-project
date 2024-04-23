@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome Cules</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1>FC BARCELONA</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Contact.html">Contact</a></li>
-                    <li><a href="fan_test.html">FAN TEST</a></li>
-                </ul>
-            </nav>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Cules</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FC BARCELONA</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="fan_test.html">FAN TEST</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <div class="test-container">
-            <form id="test-form" action="/submit-test" method="POST">
+            <form id="test-form" action="/submit-test" method="POST" onsubmit="calculateScore(); return false;">
                 <div class="question">
                     <p>1. When was the last time we won the Champions League?</p>
                     <label>
@@ -57,14 +57,146 @@
                         <input type="radio" name="question3" value="c"> c) The Blaugrana
                     </label><br>
                 </div>
-           
+                <div class="question">
+                    <p>4. Which player is known as "La Pulga"?</p>
+                    <label>
+                        <input type="radio" name="question4" value="a"> a) Andres Iniesta
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question4" value="b"> b) Xavi Hernandez
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question4" value="c"> c) Lionel Messi
+                    </label><br>
+                </div>
+                <div class="question">
+                    <p>5. Who is the top scorer in the history of FC Barcelona?</p>
+                    <label>
+                        <input type="radio" name="question5" value="a"> a) Ronaldinho
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question5" value="b"> b) Rivaldo
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question5" value="c"> c) Lionel Messi
+                    </label><br>
+                </div>
+                <div class="question">
+                    <p>6. In which year was FC Barcelona founded?</p>
+                    <label>
+                        <input type="radio" name="question6" value="a"> a) 1899
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question6" value="b"> b) 1905
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question6" value="c"> c) 1920
+                    </label><br>
+                </div>
+                <div class="question">
+                    <p>7. Who is the current president of FC Barcelona?</p>
+                    <label>
+                        <input type="radio" name="question7" value="a"> a) Joan Laporta
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question7" value="b"> b) Josep Maria Bartomeu
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question7" value="c"> c) Sandro Rosell
+                    </label><br>
+                </div>
+                <div class="question">
+                    <p>8. Which player scored the winning goal in the 2006 Champions League final?</p>
+                    <label>
+                        <input type="radio" name="question8" value="a"> a) Samuel Eto'o
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question8" value="b"> b) Ronaldinho
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question8" value="c"> c) Juliano Belletti
+                    </label><br>
+                </div>
+                <div class="question">
+                    <p>9. What is the capacity of Camp Nou Stadium?</p>
+                    <label>
+                        <input type="radio" name="question9" value="a"> a) 90,000
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question9" value="b"> b) 100,000
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question9" value="c"> c) 110,000
+                    </label><br>
+                </div>
+                <div class="question">
+                    <p>10. Who is the all-time appearance leader for FC Barcelona?</p>
+                    <label>
+                        <input type="radio" name="question10" value="a"> a) Lionel Messi
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question10" value="b"> b) Xavi Hernandez
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question10" value="c"> c) Carles Puyol
+                    </label><br>
+                </div>
                 <button type="submit">Submit</button>
             </form>
+            <div id="result-container" style="display: none;">
+                <h2>Your Score</h2>
+                <p id="score"></p>
+            </div>
         </div>
-        
     </main>
-    <footer>
-        <p>How much do you know?</p>
-    </footer>
+  
+    <script>
+        function calculateScore() {
+            var form = document.getElementById('test-form');
+            var answers = new FormData(form);
+
+            var score = 0;
+        
+            answers.forEach(function(value, key) {
+                switch(key) {
+                    case 'question1':
+                        if (value === 'c') score++;
+                        break;
+                    case 'question2':
+                        if (value === 'c') score++;
+                        break;
+                    case 'question3':
+                        if (value === 'c') score++;
+                        break;
+                    case 'question4':
+                        if (value === 'c') score++;
+                        break;
+                    case 'question5':
+                        if (value === 'c') score++;
+                        break;
+                    case 'question6':
+                        if (value === 'a') score++;
+                        break;
+                    case 'question7':
+                        if (value === 'a') score++;
+                        break;
+                    case 'question8':
+                        if (value === 'c') score++;
+                        break;
+                    case 'question9':
+                        if (value === 'a') score++;
+                        break;
+                    case 'question10':
+                        if (value === 'a') score++;
+                        break;
+                }
+            });
+
+            var resultContainer = document.getElementById('result-container');
+            var scoreDisplay = document.getElementById('score');
+            scoreDisplay.textContent = score + '/10'; 
+            resultContainer.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
